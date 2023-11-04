@@ -14,32 +14,34 @@ namespace SQLiteCRUD.Controller
         private readonly IDriverRepository _driverRepository;
         private readonly ILogger<DriversController> _logger;
         private readonly DriverRequestValidator _validator;
+        private readonly IUtilities _utilities;
 
-        public DriversController(IDriverRepository driverRepository, ILogger<DriversController> logger, DriverRequestValidator validator)
+        public DriversController(IDriverRepository driverRepository, ILogger<DriversController> logger, DriverRequestValidator validator, IUtilities utilities)
         {
             _driverRepository = driverRepository;
             _logger = logger;
             _validator = validator;
+            _utilities=utilities;
         }
 
         [HttpPost("random")]
         public IActionResult InsertRandomNames()
         {
-            _driverRepository.InsertRandomNames(10);
+            _utilities.InsertRandomNames(10);
             return Ok("Random names inserted successfully.");
         }
 
         [HttpGet("alphabetical")]
         public async Task<IActionResult> GetUsersAlphabetically()
         {
-            var sortedDrivers = await _driverRepository.GetUsersAlphabetically();
+            var sortedDrivers = await _utilities.GetUsersAlphabetically();
             return Ok(sortedDrivers);
         }
 
         [HttpGet("alphabetized")]
         public async Task<IActionResult> GetAlphabetizedName(int driverId)
         {
-            var alphabetizedName = await _driverRepository.GetAlphabetizedName(driverId);
+            var alphabetizedName = await _utilities.GetAlphabetizedName(driverId);
             return Ok(alphabetizedName);
         }
 

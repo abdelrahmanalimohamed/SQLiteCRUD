@@ -8,8 +8,6 @@ namespace SQLiteCRUD.Interface
         Task DeleteDriver(int driverId);
         Task<IEnumerable<Driver>> GetAllDrivers();
         Task<Driver> GetDriverById(int driverId);
-        void InsertRandomNames(int numberOfNames);
-        Task<List<Driver>> GetUsersAlphabetically();
-        Task<string> GetAlphabetizedName(int driverId);
+     
     }
 }

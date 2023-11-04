@@ -3,6 +3,7 @@ using SQLiteCRUD.CustomLogger;
 using SQLiteCRUD.Helper;
 using SQLiteCRUD.Interface;
 using SQLiteCRUD.Repository;
+using SQLiteCRUD.Utilities;
 using SQLiteCRUD.Validator;
 
 namespace SQLiteCRUD
@@ -20,6 +21,7 @@ namespace SQLiteCRUD
 
             builder.Services.AddControllers();
             builder.Services.AddScoped<IDriverRepository, DriverRepository>();
+            builder.Services.AddScoped<IUtilities, UtilitiesServices>();
             // Register the validator
             builder.Services.AddTransient<DriverRequestValidator>();
             builder.Services.AddSingleton<DatabaseHelper>();
