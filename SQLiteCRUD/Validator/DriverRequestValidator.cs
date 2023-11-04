@@ -3,7 +3,7 @@ using SQLiteCRUD.Models;
 
 namespace SQLiteCRUD.Validator
 {
-    public class DriverRequestValidator : AbstractValidator<Driver>
+    public class DriverRequestValidator : AbstractValidator<DriverRequest>
     {
         public DriverRequestValidator()
         {

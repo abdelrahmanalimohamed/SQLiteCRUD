@@ -39,7 +39,6 @@ namespace SQLiteCRUD.Helper
             }
             catch (Exception ex)
             {
-                // Handle the exception (log, throw, etc.)
                 throw new DatabaseException("Failed to execute non-query operation.", ex);
             }
             finally
@@ -65,7 +64,6 @@ namespace SQLiteCRUD.Helper
             }
             catch (Exception ex)
             {
-                // Handle the exception (log, throw, etc.)
                 throw new DatabaseException("Failed to execute query operation.", ex);
             }
             finally

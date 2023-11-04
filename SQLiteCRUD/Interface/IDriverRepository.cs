@@ -3,10 +3,13 @@ namespace SQLiteCRUD.Interface
 {
     public interface IDriverRepository
     {
-        Task AddDriver(Driver driver);
-        void UpdateDriver(int driverId, Driver driver);
-        void DeleteDriver(int driverId);
-        IEnumerable<Driver> GetAllDrivers();
-        Driver GetDriverById(int driverId);
+        Task AddDriver(DriverRequest driver);
+        Task UpdateDriver(int driverId, DriverRequest driver);
+        Task DeleteDriver(int driverId);
+        Task<IEnumerable<Driver>> GetAllDrivers();
+        Task<Driver> GetDriverById(int driverId);
+        void InsertRandomNames(int numberOfNames);
+        Task<List<Driver>> GetUsersAlphabetically();
+        Task<string> GetAlphabetizedName(int driverId);
     }
 }
