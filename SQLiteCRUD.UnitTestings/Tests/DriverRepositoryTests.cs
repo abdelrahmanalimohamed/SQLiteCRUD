@@ -46,7 +46,7 @@ namespace SQLiteCRUD.UnitTestings.Tests
         public async Task UpdateDriver_ShouldUpdateDriverInDatabase()
         {
             // Arrange
-            int driverId = 7;
+            int driverId = 1;
             var updatedDriverRequest = new DriverRequest
             {
                 // Initialize updated driver request properties
