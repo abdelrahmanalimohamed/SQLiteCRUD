@@ -16,7 +16,11 @@ namespace SQLiteCRUD.Controller
         private readonly DriverRequestValidator _validator;
         private readonly IUtilities _utilities;
 
-        public DriversController(IDriverRepository driverRepository, ILogger<DriversController> logger, DriverRequestValidator validator, IUtilities utilities)
+        public DriversController(
+            IDriverRepository driverRepository, 
+            ILogger<DriversController> logger, 
+            DriverRequestValidator validator, 
+            IUtilities utilities)
         {
             _driverRepository = driverRepository;
             _logger = logger;
@@ -59,9 +63,15 @@ namespace SQLiteCRUD.Controller
             try
             {
                 // Add the driver using the repository
-                await _driverRepository.AddDriver(driverRequest);
+               var addDriver=  await _driverRepository.AddDriver(driverRequest);
 
-                return Ok("Driver added successfully.");
+                if (addDriver > 0)
+                {
+                    return Ok("Driver added successfully.");
+                }
+
+                return BadRequest("Driver Not added .");
+
             }
             catch (Exception ex)
             {
@@ -118,9 +128,15 @@ namespace SQLiteCRUD.Controller
                 }
 
                 // Update the driver using the repository
-                await _driverRepository.UpdateDriver(id, driverRequest);
+              var driverUpdated =   await _driverRepository.UpdateDriver(id, driverRequest);
 
-                return Ok("Driver updated successfully.");
+                if (driverUpdated > 0)
+                {
+
+                    return Ok("Driver updated successfully.");
+                }
+
+                return BadRequest("Driver Not updated .");
             }
             catch (Exception ex)
             {

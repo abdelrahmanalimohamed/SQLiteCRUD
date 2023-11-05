@@ -22,8 +22,10 @@ namespace SQLiteCRUD
             builder.Services.AddControllers();
             builder.Services.AddScoped<IDriverRepository, DriverRepository>();
             builder.Services.AddScoped<IUtilities, UtilitiesServices>();
+
             // Register the validator
             builder.Services.AddTransient<DriverRequestValidator>();
+
             builder.Services.AddSingleton<DatabaseHelper>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

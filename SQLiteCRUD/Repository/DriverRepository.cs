@@ -15,14 +15,14 @@ namespace SQLiteCRUD.Repository
             _databaseHelper = new DatabaseHelper(configuration);
         }
 
-        public async Task AddDriver(DriverRequest driver)
+        public async Task<int> AddDriver(DriverRequest driver)
         {
             string query = $"INSERT INTO Driver (FirstName, LastName, Email, PhoneNumber) " +
                            $"VALUES ('{driver.firstName}', '{driver.lastName}', '{driver.email}', '{driver.phoneNumber}')";
 
             try
             {
-                await _databaseHelper.ExecuteNonQueryAsync(query);
+                return  await _databaseHelper.ExecuteNonQueryAsync(query);
             }
             catch (DatabaseException ex)
             {
@@ -58,10 +58,10 @@ namespace SQLiteCRUD.Repository
             return null;
         }
 
-        public async Task UpdateDriver(int driverId, DriverRequest driver)
+        public async Task<int> UpdateDriver(int driverId, DriverRequest driver)
         {
             string query = $"UPDATE Driver SET firstName = '"+driver.firstName+"', lastName = '"+driver.lastName+"', email = '"+driver.email+"', phoneNumber = '"+driver.phoneNumber+"' WHERE Id = "+driverId+"";
-            await _databaseHelper.ExecuteNonQueryAsync(query);
+            return await _databaseHelper.ExecuteNonQueryAsync(query);
         }
 
         public async Task<IEnumerable<Driver>> GetAllDrivers()
