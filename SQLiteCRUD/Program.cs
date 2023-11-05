@@ -14,7 +14,7 @@ namespace SQLiteCRUD
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Logging.AddProvider(new FileLoggerProvider("customLogs/app.log"));
+            builder.Logging.AddProvider(new FileLoggerProvider("app.log"));
 
             // Add services to the container.
             builder.Services.AddLogging();
