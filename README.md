@@ -18,8 +18,8 @@ This repository contains a basic CRUD application built using ADO.NET and SQLite
 # Getting Started:
 To get started with this application, follow these steps:
 
-Clone the repository to your local machine.
-Set up the required dependencies and database configurations.
-Build and run the application.
-Access the API endpoints to perform CRUD operations on the Driver model.
-Feel free to explore the codebase, contribute to the project, and adapt the application for your specific use cases.
+- Clone the repository to your local machine.
+- Set up the required dependencies and database configurations.
+- Build and run the application.
+- Access the API endpoints to perform CRUD operations on the Driver model.
+- Feel free to explore the codebase, contribute to the project, and adapt the application for your specific use cases.
