@@ -1,5 +1,7 @@
 # CRUD Application with ADO.NET and SQLite
-This repository contains a basic CRUD application built using ADO.NET and SQLite, following best programming practices and design patterns. The application allows users to perform Create, Read, Update, and Delete operations on a Driver model, which includes fields for FirstName, LastName, Email, and PhoneNumber. The application is designed to compile and execute flawlessly and serves as a robust foundation for more complex applications.
+- This repository contains a basic CRUD application built using ADO.NET and SQLite, following best programming practices and design patterns. 
+- The application allows users to perform Create, Read, Update, and Delete operations on a Driver model, which includes fields for FirstName, LastName, Email, and PhoneNumber. 
+- The application is designed to compile and execute flawlessly and serves as a robust foundation for more complex applications.
 
 # Features:
 - CRUD Operations: Create, Read, Update, and Delete operations are implemented using ADO.NET, ensuring data integrity and security.
