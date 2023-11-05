@@ -1,13 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
-using SQLiteCRUD.Helper;
 using SQLiteCRUD.Interface;
 using SQLiteCRUD.Models;
 using SQLiteCRUD.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SQLiteCRUD.UnitTestings.Tests
 {
@@ -46,7 +40,7 @@ namespace SQLiteCRUD.UnitTestings.Tests
         public async Task UpdateDriver_ShouldUpdateDriverInDatabase()
         {
             // Arrange
-            int driverId = 1;
+            int driverId = 5;
             var updatedDriverRequest = new DriverRequest
             {
                 // Initialize updated driver request properties
@@ -79,7 +73,7 @@ namespace SQLiteCRUD.UnitTestings.Tests
         public async Task GetDriverById_ShouldReturnDriverFromDatabase()
         {
             // Arrange
-            int driverId = 1;
+            int driverId = 3;
 
             // Act
             var driver = await _driverRepository.GetDriverById(driverId);
@@ -93,7 +87,7 @@ namespace SQLiteCRUD.UnitTestings.Tests
         public async Task DeleteDriver_ShouldDeleteDriverFromDatabase()
         {
             // Arrange
-            int driverId = 1;
+            int driverId = 9;
 
             // Act
             await _driverRepository.DeleteDriver(driverId);

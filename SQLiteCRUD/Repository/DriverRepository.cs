@@ -2,7 +2,6 @@
 using SQLiteCRUD.Interface;
 using SQLiteCRUD.Models;
 using System.Data;
-using System.Data.SQLite;
 
 namespace SQLiteCRUD.Repository
 {
@@ -31,10 +30,10 @@ namespace SQLiteCRUD.Repository
             }
         }
 
-        public async Task DeleteDriver(int driverId)
+        public async Task<int> DeleteDriver(int driverId)
         {
             string query = $"DELETE FROM Driver WHERE Id = "+driverId+"";
-           await _databaseHelper.ExecuteNonQueryAsync(query);
+            return await _databaseHelper.ExecuteNonQueryAsync(query);
         }
 
         public async Task<Driver> GetDriverById(int driverId)

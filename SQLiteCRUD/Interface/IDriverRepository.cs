@@ -5,7 +5,7 @@ namespace SQLiteCRUD.Interface
     {
         Task<int> AddDriver(DriverRequest driver);
         Task<int> UpdateDriver(int driverId, DriverRequest driver);
-        Task DeleteDriver(int driverId);
+        Task<int> DeleteDriver(int driverId);
         Task<IEnumerable<Driver>> GetAllDrivers();
         Task<Driver> GetDriverById(int driverId);
      

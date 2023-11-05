@@ -1,5 +1,4 @@
 ﻿using FluentValidation.Results;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SQLiteCRUD.Interface;
 using SQLiteCRUD.Models;
@@ -95,9 +94,14 @@ namespace SQLiteCRUD.Controller
                 }
 
                 // Delete the driver using the repository
-                await _driverRepository.DeleteDriver(id);
+               var deleted = await _driverRepository.DeleteDriver(id);
+                if (deleted > 0)
+                {
+                    return Ok("Driver deleted successfully.");
+                }
 
-                return Ok("Driver deleted successfully.");
+                return BadRequest("Driver not deleted .");
+
             }
             catch (Exception ex)
             {

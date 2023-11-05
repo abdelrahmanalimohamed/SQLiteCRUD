@@ -1,7 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Moq;
 using SQLiteCRUD.Helper;
-using SQLiteCRUD.Interface;
 using System.Data;
 using System.Data.SQLite;
 using Xunit;
